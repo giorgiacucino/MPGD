@@ -87,7 +87,7 @@ class ManifoldPreservingGradient(ConditioningMethod):
         x_t -= norm_grad * self.scale
 
         #Project the data in the first half of the sampling process (different from the paper)
-        if (idx > timesteps/2):
+        if (idx > timesteps / 2):
           x_t = self.project(data=x_t, noisy_measurement=measurement, **kwargs)
         return x_t, norm
 
